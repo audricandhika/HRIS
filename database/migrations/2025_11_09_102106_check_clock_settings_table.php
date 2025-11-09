@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('check_clocks_settings', function (Blueprint $table) {
+        Schema::create('check_clock_settings', function (Blueprint $table) {
                 $table->id('id');
                 $table->string('name', 50);
                 $table->integer('type');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('check_clocks_settings');
+        Schema::dropIfExists('check_clock_settings');
     }
 };

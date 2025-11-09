@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('check_clocks_settings_times', function (Blueprint $table) {
+        Schema::create('check_clock_setting_times', function (Blueprint $table) {
                 $table->id('id');
                 $table->unsignedBigInteger('ck_settings_id');
                 $table->date('day');
@@ -24,7 +24,7 @@ return new class extends Migration
                 $table->timestamp('deleted_at')->nullable();
 
 
-                $table->foreign('ck_settings_id')->references('id')->on('check_clocks_settings')->onDelete('cascade');
+                $table->foreign('ck_settings_id')->references('id')->on('check_clock_settings')->onDelete('cascade');
 
             });
     }
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('check_clocks_settings_times');
+        Schema::dropIfExists('check_clock_setting_times');
     }
 };
